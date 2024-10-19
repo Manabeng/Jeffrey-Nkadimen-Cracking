@@ -16,7 +16,7 @@ $ pip2 install mechanize
 
 $ apt install git
 
-$ git clone https://github.com/Manabeng/Jeffrey-Nkadimen-Cracking
+$ git clone https://github.com/Manabeng/Jeffrey-Nkadimeng-Cracking
 
 $ cd Jeffrey-Nkadimen-Cracking
 
