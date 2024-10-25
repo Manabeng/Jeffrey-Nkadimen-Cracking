@@ -18,6 +18,6 @@ $ apt install git
 
 $ git clone https://github.com/Manabeng/Jeffrey-Nkadimeng-Cracking
 
-$ cd Jeffrey-Nkadimen-Cracking
+$ cd Jeffrey-Nkadimeng-Cracking
 
 $ python2 Crack.py
