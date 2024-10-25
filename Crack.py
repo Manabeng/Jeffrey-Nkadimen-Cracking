@@ -54,7 +54,7 @@ bulan_ttl = {"01": "Januari", "02": "Februari", "03": "Maret", "04": "April", "0
 def logo():
 	os.system("clear")
 	print("\nJ E F F R E Y -- N K A D I M E N G.")
-    print("--------------------------------------------------")
+    
     print("➤ Author   : Jeffrey-Nkadimeng")
     print("➤ Github   : https://github.com/Manabeng")
     print("➤ Whatsapp : +27737093460")
